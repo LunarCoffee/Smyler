@@ -27,20 +27,35 @@ fun main(args: Array<String>) = EngineMain.main(args)
 
 @Suppress("unused")
 internal fun Application.module() {
-//    val user = User(
-//        "Yash",
-//        "1234",
-//        listOf(
-//            Card(
-//                "Visa",
-//                Random.nextLong(1_000_000_000_000_000, 10_000_000_000_000_000).toString(),
-//                Random.nextInt(100, 1_000)
-//            )
-//        ),
-//        "908a0bd6-2bc6-4a75-a09c-9d660bc81817",
-//        emptyList()
-//    )
-//    runBlocking { userCol.insertOne(user) }
+    val user = User(
+        "Yash",
+        "1234",
+        listOf(
+            Card(
+                "Visa",
+                Random.nextLong(1_000_000_000_000_000, 10_000_000_000_000_000).toString(),
+                Random.nextInt(100, 1_000)
+            ),
+            Card(
+                "MasterCard",
+                Random.nextLong(1_000_000_000_000_000, 10_000_000_000_000_000).toString(),
+                Random.nextInt(100, 1_000)
+            ),
+            Card(
+                "MasterCard",
+                Random.nextLong(1_000_000_000_000_000, 10_000_000_000_000_000).toString(),
+                Random.nextInt(100, 1_000)
+            ),
+            Card(
+                "American Express",
+                Random.nextLong(1_000_000_000_000_000, 10_000_000_000_000_000).toString(),
+                Random.nextInt(100, 1_000)
+            )
+        ),
+        "908a0bd6-2bc6-4a75-a09c-9d660bc81817",
+        emptyList()
+    )
+    runBlocking { userCol.insertOne(user) }
 
     install(AutoHeadResponse)
     install(CachingHeaders) {
